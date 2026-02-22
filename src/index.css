@@ -1,0 +1,145 @@
+/* 1. Import Fonts (must precede all other rules) */
+@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Bruno+Ace+SC&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Monoton&family=Train+One&display=swap');
+@import "tailwindcss";
+
+
+/* 2. Define your Theme here */
+@theme {
+  /* Colors — Brand Guidelines */
+  --color-primary: #003049;
+  /* Prussian Blue */
+  --color-accent: #F77F00;
+  /* Vivid Orange */
+  --color-danger: #D62828;
+  /* Deep Red */
+  --color-light: #F8F9FA;
+  /* Off-White */
+  --color-white: #FFFFFF;
+
+  /* Font Families */
+  --font-bruno-ace-sc: "Bruno Ace SC", sans-serif;
+  --font-monoton: "Monoton", sans-serif;
+  --font-exo: "Exo 2", sans-serif;
+  --font-asul: "Asul", serif;
+  --font-merriweather: "Merriweather", serif;
+  --font-train-one: "Train One", system-ui;
+
+  /* Animations — StarBorder lights */
+  --animate-star-movement-bottom: star-movement-bottom linear infinite alternate;
+  --animate-star-movement-top: star-movement-top linear infinite alternate;
+}
+
+/* 3. Global Styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: var(--color-light);
+  font-family: var(--font-exo);
+  overflow-x: hidden;
+}
+
+.bruno-ace-sc-regular {
+  font-family: "Bruno Ace SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Custom Utilities */
+.text-outline {
+  -webkit-text-stroke: 2px var(--color-accent);
+  color: transparent;
+}
+
+/* Timeline moving light animation */
+@keyframes timelineGlow {
+  0% {
+    left: -4rem;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes timelineGlowVertical {
+  0% {
+    top: -4rem;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Logo loop infinite scroll */
+@keyframes logoScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Section title — StarBorder moving lights */
+@keyframes star-movement-bottom {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-100%, 0%);
+    opacity: 0;
+  }
+}
+
+@keyframes star-movement-top {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(100%, 0%);
+    opacity: 0;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}

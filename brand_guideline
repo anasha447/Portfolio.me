@@ -1,0 +1,27 @@
+# Brand Guidelines & Design System
+
+## 1. Color Palette
+- **Primary (Dark / Backgrounds / Navbar):** Prussian Blue (`#003049`)
+- **Primary Accent (Action / Buttons / Main Highlights):** Vivid Orange (`#F77F00`)
+- **Secondary Accent (Badges / Hover States / Special Elements):** Deep Red (`#D62828`)
+- **Text Color Requirement:** Because the primary palette is highly saturated and dark, rely on pure White (`#FFFFFF`) or Off-White (`#F8F9FA`) for all body and heading text to guarantee perfect readability.
+
+## 2. Typography
+- **Headings Font:** 'Inter', sans-serif
+  - *Usage:* Hero text, section titles, project names, and numbers.
+  - *Vibe:* Geometric, technical, and bold.
+- **Body Font:** 'Roboto', sans-serif
+  - *Usage:* Paragraphs, descriptions, and general UI text.
+  - *Vibe:* Clean, highly readable, and professional.
+
+## 3. Design Philosophy
+- **Vibe:** Modern, technical, and high-energy. The UI should feel like a premium, dynamic software product.
+- **Motion & "Antigravity":** Elements should feel weightless.
+  - Use smooth, slow floating animations on the Y-axis for hero images or background tech icons.
+  - Hover states should lift items slightly (e.g., `translate-y-[-4px]`) with soft, diffused shadows.
+  - Transitions must be fluid, avoiding abrupt, snappy movements.
+
+## 4. Component Rules
+- **Buttons:** Solid Vivid Orange (`#F77F00`) background, rounded corners (e.g., `rounded-md`), with a subtle scale-up effect on hover. Use Deep Red (`#D62828`) for secondary buttons, alert states, or aggressive hover transitions.
+- **Cards (Projects/Experience):** Dark glassmorphism. Use a highly transparent overlay (e.g., `bg-white/5 backdrop-blur-md`) over the Prussian Blue background, with white text and soft, dark drop shadows (`shadow-2xl`).
+- **Borders:** Keep them minimal. Use a low opacity of the Vivid Orange or Deep Red (e.g., `border-[#F77F00]/20` or `border-[#D62828]/20`) to create subtle, glowing dividing lines between sections.
