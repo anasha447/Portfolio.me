@@ -72,6 +72,7 @@ const coreStack = [
     { icon: SiNodedotjs, name: 'Node JS' },
     { icon: SiHtml5, name: 'HTML5' },
     { icon: SiCss3, name: 'CSS3' },
+    { icon: SiTailwindcss, name: 'Tailwind' },
 ];
 
 // ─── Data: Tools & Ecosystem ───
@@ -83,7 +84,6 @@ const ecosystem = [
     { icon: SiPostgresql, name: 'PostgreSQL' }, // Added
     { icon: SiSpringboot, name: 'Spring Boot' }, // Added (also in core, but requested here)
     { icon: SiMongodb, name: 'MongoDB' },
-    { icon: SiTailwindcss, name: 'Tailwind' },
     { icon: SiAdobephotoshop, name: 'Photoshop' }, // Added
     { icon: SiAdobeillustrator, name: 'Illustrator' }, // Added
     // Removed Figma, Firebase
@@ -161,7 +161,7 @@ export default function Skills() {
                     {/* Tools & Ecosystem */}
                     <div className="space-y-6">
                         <h3 className="text-center font-exo text-xs text-[#F8F9FA]/40 uppercase tracking-[0.4em]">
-                            Tools & Ecosystem
+                            Tools
                         </h3>
                         <LogoLoop
                             items={ecosystem}

@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, MapPin, Phone, Send, Download, Loader2, CheckCircle2 } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 
 const GLASS =
@@ -20,6 +21,39 @@ const itemVariants = {
 };
 
 export default function Contact() {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setErrorMessage('');
+
+        const formData = new FormData(e.target);
+        formData.append("access_key", "60e8cf24-3032-4ee8-982b-3d0fe22fc2aa");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setIsSuccess(true);
+                e.target.reset();
+            } else {
+                setErrorMessage("Something went wrong. Please try again.");
+            }
+        } catch {
+            setErrorMessage("Something went wrong. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <motion.section
             id="contact"
@@ -35,12 +69,11 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     {/* ─── Contact Info ─── */}
-                    <motion.div className="flex flex-col gap-8" variants={itemVariants}>
-                        <div className={`${GLASS} p-8 flex flex-col gap-8`}>
+                    <motion.div className="flex flex-col gap-8 items-center lg:items-start order-2 lg:order-1" variants={itemVariants}>
+                        <div className={`${GLASS} p-8 flex flex-col gap-8 w-full`}>
                             <h3 className="font-exo font-bold text-2xl text-[#F8F9FA]">
                                 Get in Touch
                             </h3>
-
 
                             <div className="flex flex-col gap-6">
                                 {/* Email */}
@@ -89,46 +122,134 @@ export default function Contact() {
                                 </div>
                             </div>
                         </div>
+
+                        {/* ═══ Download CV Button ═══ */}
+                        <div className="pt-4 flex justify-center w-full">
+                            <a
+                                href="/Anas_Habib_Resume.pdf"
+                                download="Anas_Habib_Resume.pdf"
+                                className="bg-[#003049]/40 backdrop-blur-md border border-[#F8F9FA]/20 text-[#F8F9FA] hover:border-[#F77F00] hover:text-[#F77F00] px-8 py-4 rounded-full flex items-center justify-center gap-3 transition-all w-max shadow-lg group font-exo font-bold text-sm uppercase tracking-widest"
+                            >
+                                <Download size={20} aria-hidden="true" className="group-hover:translate-y-1 transition-transform" />
+                                Download CV
+                            </a>
+                        </div>
                     </motion.div>
 
                     {/* ─── Contact Form ─── */}
-                    <motion.div variants={itemVariants}>
-                        <form className={`${GLASS} p-8 flex flex-col gap-6`}>
-                            <div className="flex flex-col gap-2">
-                                <label htmlFor="email" className="font-exo text-sm font-bold text-[#F8F9FA]/70 uppercase tracking-wide">
-                                    Email Address
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    placeholder="your@email.com"
-                                    className="bg-[#001c2b]/50 border border-[#F8F9FA]/10 rounded-xl px-4 py-3 text-[#F8F9FA] font-exo placeholder:text-[#F8F9FA]/20 focus:outline-none focus:border-[#F77F00]/50 focus:ring-1 focus:ring-[#F77F00]/50 transition-all"
-                                />
-                            </div>
+                    <motion.div variants={itemVariants} className="order-1 lg:order-2 w-full">
+                        <div className="bg-[#001c2b]/50 backdrop-blur-xl border border-[#F8F9FA]/10 rounded-2xl p-8 min-h-[500px] flex flex-col justify-center">
+                            <AnimatePresence mode="wait">
+                                {isSuccess ? (
+                                    <motion.div
+                                        key="success"
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        className="flex flex-col items-center text-center gap-4"
+                                    >
+                                        <CheckCircle2 size={64} className="text-[#F77F00]" />
+                                        <h3 className="font-exo font-bold text-2xl text-[#F8F9FA]">Message Sent!</h3>
+                                        <p className="font-roboto text-[#F8F9FA]/70">
+                                            Message sent successfully! I will get back to you soon.
+                                        </p>
+                                        <button
+                                            onClick={() => setIsSuccess(false)}
+                                            className="mt-4 text-[#F77F00] hover:underline font-exo text-sm font-bold uppercase tracking-wider"
+                                        >
+                                            Send another message
+                                        </button>
+                                    </motion.div>
+                                ) : (
+                                    <motion.form
+                                        key="form"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        onSubmit={handleSubmit}
+                                        className="flex flex-col"
+                                    >
+                                        <div className="flex flex-col gap-1 mb-4">
+                                            <label htmlFor="name" className="font-exo text-xs font-bold text-[#F8F9FA]/50 uppercase tracking-widest px-1">
+                                                Your Name
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                id="name"
+                                                required
+                                                className="w-full bg-[#003049]/40 border border-[#F8F9FA]/10 rounded-lg p-3 text-[#F8F9FA] font-roboto focus:outline-none focus:border-[#F77F00] transition-colors"
+                                            />
+                                        </div>
 
-                            <div className="flex flex-col gap-2">
-                                <label htmlFor="message" className="font-exo text-sm font-bold text-[#F8F9FA]/70 uppercase tracking-wide">
-                                    Message
-                                </label>
-                                <textarea
-                                    id="message"
-                                    rows="5"
-                                    placeholder="Tell me about your project..."
-                                    className="bg-[#001c2b]/50 border border-[#F8F9FA]/10 rounded-xl px-4 py-3 text-[#F8F9FA] font-exo placeholder:text-[#F8F9FA]/20 focus:outline-none focus:border-[#F77F00]/50 focus:ring-1 focus:ring-[#F77F00]/50 transition-all resize-none"
-                                />
-                            </div>
+                                        <div className="flex flex-col gap-1 mb-4">
+                                            <label htmlFor="email" className="font-exo text-xs font-bold text-[#F8F9FA]/50 uppercase tracking-widest px-1">
+                                                Email Address
+                                            </label>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                id="email"
+                                                required
+                                                className="w-full bg-[#003049]/40 border border-[#F8F9FA]/10 rounded-lg p-3 text-[#F8F9FA] font-roboto focus:outline-none focus:border-[#F77F00] transition-colors"
+                                            />
+                                        </div>
 
-                            <button
-                                type="button"
-                                className="mt-2 bg-[#F77F00] hover:bg-[#F77F00]/90 text-white font-exo font-bold text-sm uppercase tracking-wider py-4 rounded-xl shadow-lg shadow-[#F77F00]/20 hover:shadow-[#F77F00]/40 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group"
-                            >
-                                <Send size={16} className="group-hover:translate-x-1 transition-transform" />
-                                Send Message
-                            </button>
-                        </form>
+                                        <div className="flex flex-col gap-1 mb-4">
+                                            <label htmlFor="subject" className="font-exo text-xs font-bold text-[#F8F9FA]/50 uppercase tracking-widest px-1">
+                                                Subject
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="subject"
+                                                id="subject"
+                                                required
+                                                className="w-full bg-[#003049]/40 border border-[#F8F9FA]/10 rounded-lg p-3 text-[#F8F9FA] font-roboto focus:outline-none focus:border-[#F77F00] transition-colors"
+                                            />
+                                        </div>
+
+                                        <div className="flex flex-col gap-1 mb-6">
+                                            <label htmlFor="message" className="font-exo text-xs font-bold text-[#F8F9FA]/50 uppercase tracking-widest px-1">
+                                                Message
+                                            </label>
+                                            <textarea
+                                                name="message"
+                                                id="message"
+                                                required
+                                                rows="5"
+                                                placeholder="how can i help you"
+                                                className="w-full bg-[#003049]/40 border border-[#F8F9FA]/10 rounded-lg p-3 text-[#F8F9FA] font-roboto placeholder:text-[#F8F9FA]/20 focus:outline-none focus:border-[#F77F00] transition-colors resize-none"
+                                            />
+                                        </div>
+
+                                        {errorMessage && (
+                                            <p className="text-red-500 text-sm font-roboto mb-4 italic">{errorMessage}</p>
+                                        )}
+
+                                        <button
+                                            type="submit"
+                                            disabled={isSubmitting}
+                                            className="w-full bg-[#F77F00] hover:bg-[#F77F00]/90 text-[#F8F9FA] font-exo font-bold text-sm uppercase tracking-wider py-4 rounded-xl shadow-lg shadow-[#F77F00]/20 hover:shadow-[#F77F00]/40 transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                                        >
+                                            {isSubmitting ? (
+                                                <>
+                                                    <Loader2 size={18} className="animate-spin" />
+                                                    Sending...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                                    Send Message
+                                                </>
+                                            )}
+                                        </button>
+                                    </motion.form>
+                                )}
+                            </AnimatePresence>
+                        </div>
                     </motion.div>
                 </div>
             </div>
         </motion.section>
     );
 }
+

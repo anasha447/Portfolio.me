@@ -15,9 +15,9 @@ const ROLE_PHRASES = [
 
 // ─── Social links ───
 const SOCIALS = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/anas-habib-95b675263?utm_source=share_via&utm_content=profile&utm_medium=member_android', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/anasha447', label: 'GitHub' },
+    { icon: Instagram, href: 'https://www.instagram.com/anas.hab?igsh=MWx5NmR1ZWNiZDk0eQ==', label: 'Instagram' },
 ];
 
 const CODE_LINES = [
@@ -221,7 +221,7 @@ export default function Hero() {
                                                 rel="noopener noreferrer"
                                                 className="p-3 rounded-full border border-[#F8F9FA]/10 text-[#F8F9FA] transition-all duration-300 hover:text-[#F77F00] hover:border-[#F77F00] hover:shadow-[0_0_15px_rgba(247,127,0,0.4)]"
                                             >
-                                                <Icon size={18} strokeWidth={1.5} />
+                                                <Icon size={18} strokeWidth={1.5} aria-hidden="true" />
                                             </a>
                                         ))}
                                     </motion.div>
@@ -246,7 +246,7 @@ export default function Hero() {
                                 rel="noopener noreferrer"
                                 className="p-3 rounded-full border border-[#F8F9FA]/10 text-[#F8F9FA] transition-all duration-300 hover:text-[#F77F00] hover:border-[#F77F00] hover:shadow-[0_0_15px_rgba(247,127,0,0.4)]"
                             >
-                                <Icon size={18} strokeWidth={1.5} />
+                                <Icon size={18} strokeWidth={1.5} aria-hidden="true" />
                             </a>
                         ))}
                     </div>
@@ -289,7 +289,7 @@ export default function Hero() {
                                     }}
                                     whileHover={{ scale: 1.15 }}
                                 >
-                                    <Icon size={18} strokeWidth={1.5} />
+                                    <Icon size={18} strokeWidth={1.5} aria-hidden="true" />
                                 </motion.a>
                             ))}
                         </motion.div>

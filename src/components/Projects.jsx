@@ -21,7 +21,7 @@ const PROJECTS = [
         gradient: 'from-[#F77F00]/20 via-[#003049]/40 to-[#D62828]/20',
         accent: '#F77F00',
         demo: 'https://matessa.in',
-        source: '#',
+        source: 'https://github.com/anasha447/Matessa',
     },
     {
         title: 'SyriaMart',
@@ -34,6 +34,7 @@ const PROJECTS = [
         accent: '#D62828',
         demo: '#',
         source: '#',
+        isDevelopment: true,
     },
 ];
 
@@ -63,7 +64,7 @@ function Tag({ label }) {
 
 // ─── Project Card ───
 function ProjectCard({ project }) {
-    const { title, icon: Icon, image, description, tags, gradient, accent, demo, source } = project;
+    const { title, icon: Icon, image, description, tags, gradient, accent, demo, source, isDevelopment } = project;
     const [showAllTags, setShowAllTags] = useState(false);
 
     const MAX_VISIBLE_TAGS = 5;
@@ -154,26 +155,37 @@ function ProjectCard({ project }) {
 
                 {/* Action buttons */}
                 <div className="flex gap-3 pt-2">
-                    <a
-                        href={demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
-                                   bg-[#F77F00] text-white font-exo font-semibold text-xs uppercase tracking-wider
-                                   transition-all duration-300 hover:shadow-[0_0_20px_rgba(247,127,0,0.4)] hover:scale-[1.02]"
-                    >
-                        Live Demo
-                    </a>
-                    <a
-                        href={source}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
-                                   border border-[#F8F9FA]/15 text-[#F8F9FA]/80 font-exo font-semibold text-xs uppercase tracking-wider
-                                   transition-all duration-300 hover:border-[#F77F00]/50 hover:text-[#F77F00] hover:scale-[1.02]"
-                    >
-                        Source
-                    </a>
+                    {isDevelopment ? (
+                        <div className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl
+                                     bg-[#F8F9FA]/5 border border-[#F8F9FA]/10 text-[#F8F9FA]/40 font-exo font-semibold text-xs uppercase tracking-widest
+                                     cursor-default select-none shadow-inner">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#F77F00] animate-pulse" />
+                            Under Development
+                        </div>
+                    ) : (
+                        <>
+                            <a
+                                href={demo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
+                                           bg-[#F77F00] text-white font-exo font-semibold text-xs uppercase tracking-wider
+                                           transition-all duration-300 hover:shadow-[0_0_20px_rgba(247,127,0,0.4)] hover:scale-[1.02]"
+                            >
+                                Live Demo
+                            </a>
+                            <a
+                                href={source}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
+                                           border border-[#F8F9FA]/15 text-[#F8F9FA]/80 font-exo font-semibold text-xs uppercase tracking-wider
+                                           transition-all duration-300 hover:border-[#F77F00]/50 hover:text-[#F77F00] hover:scale-[1.02]"
+                            >
+                                Source
+                            </a>
+                        </>
+                    )}
                 </div>
             </div>
         </motion.div>

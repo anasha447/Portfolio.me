@@ -68,7 +68,7 @@ export default function About() {
 
                         {/* Title with Blur Background - Explicit Motion Div for visibility */}
                         <div
-                            className="px-8  w-fit relative  "
+                            className="px-8 w-fit relative"
 
                         >
                             <SectionTitle className="!mb-0">About Me</SectionTitle>
@@ -85,15 +85,12 @@ export default function About() {
                             {/* Background Glow */}
                             <div className="absolute -right-10 -top-10 w-32 h-32 bg-[#F77F00]/10 blur-3xl rounded-full pointer-events-none" />
 
-                            <div className="space-y-6 text-[#F8F9FA] font-roboto text-base md:text-lg leading-relaxed text-justify md:text-left relative z-10 pl-4">
-                                <p>
-                                    I am <span className="text-[#F77F00] font-bold">Anas Habib</span>, a specialized Full-Stack Architect with a deep focus on <span className="text-[#F8F9FA] font-semibold">E-commerce ecosystems</span>. My expertise lies in architecting robust, scalable microservices using <span className="text-[#F77F00]">Java Spring Boot</span> and crafting immersive, high-conversion frontend interfaces with <span className="text-[#F77F00]">React.js</span> and <span className="text-[#F77F00]">Next.js</span>.
+                            <div className="relative z-10 pl-4">
+                                <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
+                                    I'm a <span className="text-[#F8F9FA] font-medium">Full-Stack Software Engineer and Product Founder</span> specializing in high-performance web applications and scalable e-commerce architectures. Originally from Syria and currently based in India, I leverage <span className="text-[#F8F9FA] font-medium">Java, Spring Boot, and React.js</span> to transform complex business requirements into seamless, high-converting platforms.
                                 </p>
-                                <p>
-                                    I don't just build websites; I engineer digital marketplaces that drive growth. Leveraging advanced ORMs like <span className="text-[#F8F9FA] font-semibold">Hibernate/JPA</span> and modern state management, I bridge the gap between complex backend logic and seamless user elegance.
-                                </p>
-                                <p>
-                                    Passionate about continuous innovation, I stay at the forefront of emerging technologies to deliver scalable, maintainable solutions that exceed expectations.
+                                <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
+                                    As a Product Founder building real-world brands—from lifestyle e-commerce hubs to niche beverage lines—my focus extends beyond technical execution. I treat every project with an <span className="text-[#F8F9FA] font-medium">owner's mindset</span>. By utilizing tools like <span className="text-[#F8F9FA] font-medium">Meta Ads and Google Analytics</span>, I bridge the gap between robust backend microservices and tangible user acquisition, ensuring the products I build actually drive growth.
                                 </p>
                             </div>
 
@@ -149,7 +146,7 @@ export default function About() {
                         <div className="mt-6 md:hidden absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-40 bg-[#003049]/40 backdrop-blur-md border border-[#F8F9FA]/10 rounded-3xl z-0" />
 
                         {/* MOBILE: Vertical Line - Increased Visibility */}
-                        <div className="mt-6 md:hidden absolute top-8 bottom-8 left-1/2 w-[2px] -translate-x-1/2 bg-[#D62828]/40 z-0 overflow-hidden">
+                        <div className="mt-6 md:hidden absolute top-8 bottom-12 left-1/2 w-[2px] -translate-x-1/2 bg-[#D62828]/40 z-0 overflow-hidden">
                             <div
                                 className="absolute left-0 w-full h-20 rounded-full"
                                 style={{
@@ -166,7 +163,7 @@ export default function About() {
                                 className="relative z-10 flex flex-col items-center gap-2 md:bg-transparent p-3 md:p-0 rounded-2xl md:rounded-none md:backdrop-blur-none border-none w-32 md:w-auto"
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: true, amount: 0.3 }}
                                 transition={{ delay: i * 0.1, duration: 0.4 }}
                             >
                                 {/* Icon circle */}
