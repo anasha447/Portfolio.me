@@ -115,18 +115,20 @@ export default function Skills() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
         >
-            <div className="w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 flex flex-col gap-12">
+            <div className="w-full flex flex-col gap-16">
 
-                {/* ═══ Section Title ═══ */}
-                <motion.div variants={itemVariants}>
-                    <SectionTitle>Tech Stack</SectionTitle>
-                </motion.div>
+                {/* ═══ Section Title Container ═══ */}
+                <div className="w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+                    <motion.div variants={itemVariants}>
+                        <SectionTitle>Tech Stack</SectionTitle>
+                    </motion.div>
+                </div>
 
-                {/* ═══ Loops Container ═══ */}
-                <motion.div className="flex flex-col gap-16" variants={itemVariants}>
+                {/* ═══ Full-Width Loops Container ═══ */}
+                <motion.div className="flex flex-col gap-20" variants={itemVariants}>
 
                     {/* Core Stack */}
-                    <div className="space-y-6">
+                    <div className="space-y-8">
                         <h3 className="text-center font-exo text-xs text-[#F8F9FA]/40 uppercase tracking-[0.4em]">
                             Core Stack
                         </h3>
@@ -135,13 +137,13 @@ export default function Skills() {
                             renderItem={(item) => (
                                 <div
                                     className="bg-[#003049]/20 backdrop-blur-md border border-[#F8F9FA]/5 rounded-xl
-                                            px-6 py-4 min-w-[180px] flex items-center gap-4
+                                            px-6 py-4 min-w-[200px] flex items-center gap-4
                                             transition-all duration-500
                                             hover:bg-[#003049]/50 hover:border-[#D62828]/30 hover:shadow-[0_4px_20px_rgba(214,40,40,0.15)]
                                             group cursor-default select-none"
                                 >
                                     <item.icon
-                                        size={32}
+                                        size={36}
                                         className="flex-shrink-0 transition-all duration-500 group-hover:scale-110 text-[#F77F00] group-hover:text-[#D62828]"
                                     />
                                     <div className="flex flex-col">
@@ -151,15 +153,13 @@ export default function Skills() {
                                     </div>
                                 </div>
                             )}
-                            speed={25}
-                            direction="left"
-                            gap={24}
-                            pauseOnHover
+                            baseVelocity={1}
+                            gap={32}
                         />
                     </div>
 
                     {/* Tools & Ecosystem */}
-                    <div className="space-y-6">
+                    <div className="space-y-8">
                         <h3 className="text-center font-exo text-xs text-[#F8F9FA]/40 uppercase tracking-[0.4em]">
                             Tools
                         </h3>
@@ -168,13 +168,13 @@ export default function Skills() {
                             renderItem={(item) => (
                                 <div
                                     className="bg-[#003049]/20 backdrop-blur-md border border-[#F8F9FA]/5 rounded-xl
-                                            px-6 py-4 min-w-[180px] flex items-center gap-4
+                                            px-6 py-4 min-w-[200px] flex items-center gap-4
                                             transition-all duration-500
                                             hover:bg-[#003049]/50 hover:border-[#D62828]/30 hover:shadow-[0_4px_20px_rgba(214,40,40,0.15)]
                                             group cursor-default select-none"
                                 >
                                     <item.icon
-                                        size={32}
+                                        size={36}
                                         className="flex-shrink-0 transition-all duration-500 group-hover:scale-110 text-[#F77F00] group-hover:text-[#D62828]"
                                     />
                                     <div className="flex flex-col">
@@ -184,10 +184,8 @@ export default function Skills() {
                                     </div>
                                 </div>
                             )}
-                            speed={25}
-                            direction="right"
-                            gap={24}
-                            pauseOnHover
+                            baseVelocity={-1}
+                            gap={32}
                         />
                     </div>
 

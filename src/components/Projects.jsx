@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Globe, Code2, ShoppingCart, Store } from 'lucide-react';
+import SectionTitle from './SectionTitle';
 import matessa from '../assets/images/matessa.png';
 import ecommerce from '../assets/images/e-commerce.jpeg';
 
@@ -205,28 +206,7 @@ export default function Projects() {
         >
             <div className="w-full max-w-[1400px] mx-auto flex flex-col gap-14">
                 {/* ═══ Section Title ═══ */}
-                <motion.div
-                    className="relative flex items-center justify-center"
-                    variants={cardVariants}
-                >
-                    {/* Red accent line behind the pill */}
-                    <div className="absolute inset-x-0 top-1/2 h-[2px] -translate-y-1/2 bg-[#D62828]/30 overflow-hidden">
-                        <div
-                            className="absolute top-0 h-full w-24 rounded-full"
-                            style={{
-                                background: 'linear-gradient(90deg, transparent, #D62828, transparent)',
-                                animation: 'timelineGlow 4s ease-in-out infinite',
-                            }}
-                        />
-                    </div>
-
-                    {/* Title pill */}
-                    <div className="relative z-10 bg-[#003049]/40 backdrop-blur-xl border border-[#F8F9FA]/10 rounded-full px-10 py-4 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
-                        <h2 className="font-['Train_One'] font-normal text-2xl md:text-3xl text-[#F77F00] text-center tracking-wider">
-                            Projects Showcase
-                        </h2>
-                    </div>
-                </motion.div>
+                <SectionTitle>Projects Showcase</SectionTitle>
 
                 {/* ═══ Project Cards Grid ═══ */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

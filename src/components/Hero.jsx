@@ -174,7 +174,7 @@ export default function Hero() {
                         {/* Main Name */}
                         <motion.h1
                             layoutId="brand-name"
-                            className="font-train-one font-normal text-5xl md:text-6xl text-[#F77F00] leading-none mb-6 tracking-tight w-full break-words"
+                            className="font-train-one font-normal text-4xl md:text-6xl text-[#F77F00] leading-none mb-6 tracking-tight w-full break-words"
                             transition={{ layout: { duration: 0.7, ease: [0.4, 0, 0.2, 1] } }}
                         >
                             ANAS HABIB
