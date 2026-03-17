@@ -87,13 +87,18 @@ export default function About() {
 
                             <div className="relative z-10 pl-4">
                                 <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
-                                    I'm a <span className="text-[#F8F9FA] font-medium">Full-Stack Software Engineer and Product Founder</span> specializing in high-performance web applications and scalable e-commerce architectures. Originally from Syria and currently based in India, I leverage <span className="text-[#F8F9FA] font-medium">Java, Spring Boot, and React.js</span> to transform complex business requirements into seamless, high-converting platforms.
+                                    I fell in love with programming, and over the years, I have expanded my skills in developing high-performance web applications and scalable e-commerce architectures.
                                 </p>
                                 <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
-                                    As a Product Founder building real-world brands—from lifestyle e-commerce hubs to niche beverage lines—my focus extends beyond technical execution. I treat every project with an <span className="text-[#F8F9FA] font-medium">owner's mindset</span>. By utilizing tools like <span className="text-[#F8F9FA] font-medium">Meta Ads and Google Analytics</span>, I bridge the gap between robust backend microservices and tangible user acquisition, ensuring the products I build actually drive growth.
+                                    I am fluent in core technologies like <span className="text-[#F8F9FA] font-medium">Java, JavaScript, and SQL</span>.
+                                </p>
+                                <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
+                                    My field of interest lies in building innovative web technologies and products, as well as integrating data-driven tools like <span className="text-[#F8F9FA] font-medium">Meta Ads and Google Analytics</span> to bridge the gap between clean code and real-world business growth.
+                                </p>
+                                <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
+                                    Whenever possible, I channel my passion into developing scalable and secure solutions using robust frameworks like <span className="text-[#F8F9FA] font-medium">Spring Boot</span> and modern JavaScript technologies like <span className="text-[#F8F9FA] font-medium">React.js</span>.
                                 </p>
                             </div>
-
                             {/* Stats Row (Inside card for unified look) */}
 
                         </motion.div>

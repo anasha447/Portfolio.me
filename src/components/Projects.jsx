@@ -4,6 +4,9 @@ import { Globe, Code2, ShoppingCart, Store } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 import matessa from '../assets/images/matessa.png';
 import ecommerce from '../assets/images/e-commerce.jpeg';
+import globalCsrLogo from '../assets/images/global-csr.png';
+import qatarCsrLogo from '../assets/images/qatar-csr.png';
+import spainCsrLogo from '../assets/images/spain-csr.png';
 
 
 // ─── Glass card base ───
@@ -11,13 +14,13 @@ const GLASS =
     'bg-[#003049]/30 backdrop-blur-sm border border-[#F8F9FA]/10 rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]';
 
 // ─── Project Data ───
-const PROJECTS = [
+const FLAGSHIP_PROJECTS = [
     {
         title: 'Matessa',
         icon: ShoppingCart,
         image: matessa,
         description:
-            'A full-featured e-commerce store with product catalog, cart management, secure checkout, and order tracking — built for a seamless shopping experience.',
+            'A full-featured e-commerce store with secure checkout. Engineered the React frontend to capture precise Google Analytics events and integrated Meta Ads for user acquisition, optimizing the conversion funnel.',
         tags: ['Java', 'Spring Boot', 'React', 'MySQL', 'REST API', 'JWT Auth'],
         gradient: 'from-[#F77F00]/20 via-[#003049]/40 to-[#D62828]/20',
         accent: '#F77F00',
@@ -36,6 +39,45 @@ const PROJECTS = [
         demo: '#',
         source: '#',
         isDevelopment: true,
+    },
+];
+
+const SECONDARY_PROJECTS = [
+    {
+        title: 'Global CSR',
+        icon: Globe,
+        image: globalCsrLogo,
+        description: 'A digital platform connecting governments, universities, and research institutions to drive sustainability and social responsibility strategies.',
+        tags: ['Wordpress', 'PHP', 'Bootstrap'],
+        gradient: 'from-[#003049]/40 via-[#F77F00]/10 to-[#003049]/40',
+        accent: '#F8F9FA',
+        demo: 'https://globalcsr.org/',
+        source: '#',
+        imageContain: true,
+    },
+    {
+        title: 'QatarCSR',
+        icon: Globe,
+        image: qatarCsrLogo,
+        description: 'A premier platform hosted by Qatar University that champions Corporate Social Responsibility through cross-sector partnerships and major events like the Qatar CSR Summit.',
+        tags: ['Wordpress', 'PHP', 'Bootstrap'],
+        gradient: 'from-[#003049]/40 via-[#F77F00]/10 to-[#003049]/40',
+        accent: '#F8F9FA',
+        demo: 'https://qatarcsr.org/',
+        source: '#',
+        imageContain: true,
+    },
+    {
+        title: 'SpainCSR',
+        icon: Globe,
+        image: spainCsrLogo,
+        description: 'academic institutions to empower students through specialized training and career placements. It elevates global university rankings while aligning academic efforts with international social responsibility and UN standards.',
+        tags: ['Wordpress', 'PHP', 'Bootstrap'],
+        gradient: 'from-[#003049]/40 via-[#F77F00]/10 to-[#003049]/40',
+        accent: '#F8F9FA',
+        demo: 'https://spaincsr.org/',
+        source: '#',
+        imageContain: true,
     },
 ];
 
@@ -65,7 +107,7 @@ function Tag({ label }) {
 
 // ─── Project Card ───
 function ProjectCard({ project }) {
-    const { title, icon: Icon, image, description, tags, gradient, accent, demo, source, isDevelopment } = project;
+    const { title, icon: Icon, image, description, tags, gradient, accent, demo, source, isDevelopment, imageContain } = project;
     const [showAllTags, setShowAllTags] = useState(false);
 
     const MAX_VISIBLE_TAGS = 5;
@@ -82,13 +124,13 @@ function ProjectCard({ project }) {
             onMouseLeave={() => setShowAllTags(false)}
         >
             {/* ── Screenshot / Hero area ── */}
-            <div className={`relative h-64 bg-[#001c2b]/50 overflow-hidden group-hover:bg-[#001c2b]/70 transition-colors duration-500`}>
+            <div className={`relative h-55 bg-[#001c2b]/50 overflow-hidden group-hover:bg-[#001c2b]/70 transition-colors duration-500`}>
                 {/* Image or Placeholder */}
                 {image ? (
                     <img
                         src={image}
                         alt={title}
-                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                        className={`w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500 ${imageContain ? 'object-contain object-top p-4' : 'object-cover'}`}
                     />
                 ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -99,15 +141,22 @@ function ProjectCard({ project }) {
                 )}
 
                 {/* Title overlay */}
-                <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-[#001c2b] to-transparent">
-                    <h3 className="font-exo font-bold text-2xl text-[#F8F9FA]">
-                        {title}
-                    </h3>
-                </div>
+                {!imageContain && (
+                    <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-[#001c2b] to-transparent">
+                        <h3 className="font-exo font-bold text-2xl text-[#F8F9FA]">
+                            {title}
+                        </h3>
+                    </div>
+                )}
             </div>
 
             {/* ── Content ── */}
-            <div className="flex flex-col flex-1 p-6 gap-4">
+            <div className="flex flex-col flex-1 p-5 gap-4">
+                {imageContain && (
+                    <h3 className="font-exo font-bold text-[22px] text-[#F8F9FA] leading-tight mt-1">
+                        {title}
+                    </h3>
+                )}
                 {/* Description */}
                 <p className="font-exo font-light text-sm text-[#F8F9FA]/70 leading-relaxed line-clamp-3">
                     {description}
@@ -175,16 +224,18 @@ function ProjectCard({ project }) {
                             >
                                 Live Demo
                             </a>
-                            <a
-                                href={source}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
-                                           border border-[#F8F9FA]/15 text-[#F8F9FA]/80 font-exo font-semibold text-xs uppercase tracking-wider
-                                           transition-all duration-300 hover:border-[#F77F00]/50 hover:text-[#F77F00] hover:scale-[1.02]"
-                            >
-                                Source
-                            </a>
+                            {source !== '#' && (
+                                <a
+                                    href={source}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
+                                               border border-[#F8F9FA]/15 text-[#F8F9FA]/80 font-exo font-semibold text-xs uppercase tracking-wider
+                                               transition-all duration-300 hover:border-[#F77F00]/50 hover:text-[#F77F00] hover:scale-[1.02]"
+                                >
+                                    Source
+                                </a>
+                            )}
                         </>
                     )}
                 </div>
@@ -209,10 +260,20 @@ export default function Projects() {
                 <SectionTitle>Projects Showcase</SectionTitle>
 
                 {/* ═══ Project Cards Grid ═══ */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {PROJECTS.map((project) => (
-                        <ProjectCard key={project.title} project={project} />
-                    ))}
+                <div className="flex flex-col gap-8">
+                    {/* Row 1: Flagship Projects */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {FLAGSHIP_PROJECTS.map((project) => (
+                            <ProjectCard key={project.title} project={project} />
+                        ))}
+                    </div>
+
+                    {/* Row 2: Secondary Projects */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {SECONDARY_PROJECTS.map((project) => (
+                            <ProjectCard key={project.title} project={project} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </motion.section>

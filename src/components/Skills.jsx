@@ -73,17 +73,15 @@ const coreStack = [
     { icon: SiHtml5, name: 'HTML5' },
     { icon: SiCss3, name: 'CSS3' },
     { icon: SiTailwindcss, name: 'Tailwind' },
+    { icon: SiSpringboot, name: 'Spring Boot' },
 ];
 
-// ─── Data: Tools & Ecosystem ───
 const ecosystem = [
     { icon: SiDocker, name: 'Docker' },
     { icon: SiGit, name: 'Git' },
     { icon: SiPostman, name: 'Postman' },
     { icon: SiMysql, name: 'MySQL' },
     { icon: SiPostgresql, name: 'PostgreSQL' }, // Added
-    { icon: SiSpringboot, name: 'Spring Boot' }, // Added (also in core, but requested here)
-    { icon: SiMongodb, name: 'MongoDB' },
     { icon: SiAdobephotoshop, name: 'Photoshop' }, // Added
     { icon: SiAdobeillustrator, name: 'Illustrator' }, // Added
     // Removed Figma, Firebase

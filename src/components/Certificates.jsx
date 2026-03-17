@@ -7,7 +7,7 @@ import cert2 from '../assets/images/certificate2.jpg';
 import cert3 from '../assets/images/certificate3.jpg';
 import cert4 from '../assets/images/certificate4.jpeg';
 import cert5 from '../assets/images/certificate5.jpg';
-import cert6 from '../assets/images/certificate6.jpg';
+import cert66 from '../assets/images/certificate66.jpg';
 
 // ─── Glass card base ───
 const GLASS =
@@ -18,32 +18,32 @@ const CERTIFICATES = [
     {
         title: 'Python Essentials',
         image: cert1,
-
+        link: '#',
     },
     {
         title: 'Python Data Structures',
         image: cert2,
-
+        link: '#',
     },
     {
         title: 'Network Essentials',
         image: cert3,
-
+        link: '#',
     },
     {
-        title: ' Spring Boot Essentials',
+        title: 'Spring Boot Architecture',
         image: cert5,
-
+        link: '#',
     },
     {
         title: 'Spring Boot with E-Commerce',
         image: cert4,
-
+        link: '#',
     },
     {
-        title: 'Graphic Design',
-        image: cert6,
-
+        title: 'Internship Web Development',
+        image: cert66,
+        link: '#',
     },
 ];
 
@@ -66,36 +66,41 @@ const cardVariants = {
 function CertificateCard({ cert, onClick }) {
     return (
         <motion.div
-            className={`${GLASS} overflow-hidden flex flex-col h-full cursor-pointer group`}
+            className={`${GLASS} overflow-hidden flex flex-col h-full group`}
             variants={cardVariants}
             whileHover={{ y: -6 }}
             transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-            onClick={onClick}
         >
-            {/* Image area - Height increased from h-48 to h-60 */}
-            <div className="relative h-60 bg-[#001c2b]/50 overflow-hidden group-hover:bg-[#001c2b]/70 transition-colors duration-500 flex items-center justify-center">
-                <img
-                    src={cert.image}
-                    alt={cert.title}
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                />
+            {/* Image area */}
+            <div 
+                className="relative h-80 bg-[#001c2b]/50 overflow-hidden group-hover:bg-[#001c2b]/70 transition-colors duration-500 flex items-center justify-center cursor-pointer"
+                onClick={() => { if (cert.image) onClick(); }}
+            >
+                {cert.image ? (
+                    <img
+                        src={cert.image}
+                        alt={cert.title}
+                        className="w-full h-full object-contain p-4 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                    />
+                ) : (
+                    <span className="text-[#F8F9FA]/20 font-exo font-bold text-lg tracking-widest text-center px-4">
+                        IMAGE PLACEHOLDER
+                    </span>
+                )}
 
                 {/* View indication */}
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="bg-[#F77F00] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        View
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                    <span className="bg-[#F8F9FA]/20 backdrop-blur-md text-white border border-white/20 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        Preview
                     </span>
                 </div>
             </div>
 
             {/* Content */}
-            <div className="p-5 flex flex-col gap-1 flex-grow">
-                <h3 className="font-exo font-bold text-lg text-[#F8F9FA] leading-tight">
+            <div className="p-5 flex flex-col gap-3 flex-grow border-t border-[#F8F9FA]/5">
+                <h3 className="font-exo font-bold text-[17px] text-[#F8F9FA] leading-tight line-clamp-2">
                     {cert.title}
                 </h3>
-                <span className="font-roboto text-sm text-[#F8F9FA]/70">
-                    {cert.issuer}
-                </span>
             </div>
         </motion.div>
     );

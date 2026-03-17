@@ -9,7 +9,7 @@ import Antigravity from './Antigravity';
 // ─── Dynamic role phrases ───
 const ROLE_PHRASES = [
     'Software Engineer.',
-    'Product developer & Founder.',
+    'Full-Stack Web Developer.',
     'Web Developer: \n • Java\n • Spring Boot\n • React.js\n • WordPress',
 ];
 
@@ -23,15 +23,16 @@ const SOCIALS = [
 const CODE_LINES = [
     { num: '01', content: [{ text: 'const ', color: '#D62828' }, { text: 'developer', color: '#F8F9FA' }, { text: ' = {', color: '#F8F9FA' }] },
     { num: '02', content: [{ text: '  name: ', color: '#F8F9FA/70' }, { text: "'Anas Habib'", color: '#F77F00' }, { text: ',', color: '#F8F9FA/50' }] },
-    { num: '03', content: [{ text: '  focus: ', color: '#F8F9FA/70' }, { text: "'Full-Stack Development'", color: '#F77F00' }, { text: ',', color: '#F8F9FA/50' }] },
-    { num: '04', content: [{ text: '  frontend: [', color: '#F8F9FA/70' }, { text: "'React.js'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'Tailwind'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: '],', color: '#F8F9FA/70' }] },
-    { num: '05', content: [{ text: '  backend: [', color: '#F8F9FA/70' }, { text: "'Java Spring Boot'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'REST APIs'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'SQL'", color: '#F77F00' }, { text: '],', color: '#F8F9FA/50' }] },
-    { num: '06', content: [{ text: '  expertise: ', color: '#F8F9FA/70' }, { text: "'E-commerce Platforms'", color: '#F77F00' }, { text: ',', color: '#F8F9FA/50' }] },
-    { num: '07', content: [{ text: '  passionate: ', color: '#F8F9FA/70' }, { text: 'true', color: '#D62828' }, { text: ',', color: '#F8F9FA/50' }] },
-    { num: '08', content: [{ text: '  motto: ', color: '#F8F9FA/70' }, { text: '"Build with precision and purpose."', color: '#F77F00' }] },
-    { num: '09', content: [{ text: '};', color: '#F8F9FA' }] },
+    { num: '03', content: [{ text: '  title: ', color: '#F8F9FA/70' }, { text: "'Full-Stack Web Developer'", color: '#F77F00' }, { text: ',', color: '#F8F9FA/50' }] },
+    { num: '04', content: [{ text: '  degree: ', color: '#F8F9FA/70' }, { text: "'Computer Engineering'", color: '#F77F00' }, { text: ',', color: '#F8F9FA/50' }] },
+    { num: '05', content: [{ text: '  coreStack: [', color: '#F8F9FA/70' }, { text: "'React.js'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'Java Spring Boot'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'Microservices'", color: '#F77F00' }, { text: '],', color: '#F8F9FA/70' }] },
+    { num: '06', content: [{ text: '  marketingTech: [', color: '#F8F9FA/70' }, { text: "'Google Analytics'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'Meta Ads'", color: '#F77F00' }, { text: '],', color: '#F8F9FA/50' }] },
+    { num: '07', content: [{ text: '  design: [', color: '#F8F9FA/70' }, { text: "'Adobe Tools'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'UI/UX'", color: '#F77F00' }, { text: '],', color: '#F8F9FA/50' }] },
+    { num: '08', content: [{ text: '  brandsBuilt: [', color: '#F8F9FA/70' }, { text: "'Matessa'", color: '#F77F00' }, { text: '],', color: '#F8F9FA/50' }] },
+    { num: '09', content: [{ text: '  motto: ', color: '#F8F9FA/70' }, { text: '"Engineering code that drives real-world revenue."', color: '#F77F00' }] },
+    { num: '10', content: [{ text: '};', color: '#F8F9FA' }] },
     { num: '', content: [] },
-    { num: '10', content: [{ text: 'developer', color: '#F8F9FA' }, { text: '.', color: '#F8F9FA/50' }, { text: 'showcase', color: '#D62828' }, { text: '();', color: '#F8F9FA' }] },
+    { num: '11', content: [{ text: 'developer', color: '#F8F9FA' }, { text: '.', color: '#F8F9FA/50' }, { text: 'showcase', color: '#D62828' }, { text: '();', color: '#F8F9FA' }] },
 ];
 
 function resolveColor(c) {
