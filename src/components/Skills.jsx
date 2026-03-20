@@ -19,8 +19,7 @@ import {
     SiTailwindcss,
     SiMysql,
     SiPostgresql,
-    SiMui,
-    SiCanva,
+    
     SiPostman,
     SiAdobephotoshop,
     SiAdobeillustrator,
@@ -69,7 +68,6 @@ const coreStack = [
     { icon: SiJavascript, name: 'JavaScript' },
     { icon: SiReact, name: 'React' },
     { icon: SiTypescript, name: 'TypeScript' },
-    { icon: SiNodedotjs, name: 'Node JS' },
     { icon: SiHtml5, name: 'HTML5' },
     { icon: SiCss3, name: 'CSS3' },
     { icon: SiTailwindcss, name: 'Tailwind' },

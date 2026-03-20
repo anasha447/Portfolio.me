@@ -73,14 +73,14 @@ function CertificateCard({ cert, onClick }) {
         >
             {/* Image area */}
             <div 
-                className="relative h-80 bg-[#001c2b]/50 overflow-hidden group-hover:bg-[#001c2b]/70 transition-colors duration-500 flex items-center justify-center cursor-pointer"
+                className="relative h-70 bg-[#001c2b]/50 overflow-hidden group-hover:bg-[#001c2b]/70 transition-colors duration-500 flex items-center justify-center cursor-pointer"
                 onClick={() => { if (cert.image) onClick(); }}
             >
                 {cert.image ? (
                     <img
                         src={cert.image}
                         alt={cert.title}
-                        className="w-full h-full object-contain p-4 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                        className="w-full h-full object-cover object-top  p-2 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                     />
                 ) : (
                     <span className="text-[#F8F9FA]/20 font-exo font-bold text-lg tracking-widest text-center px-4">
@@ -143,7 +143,7 @@ export default function Certificates() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 md:p-10"
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-2 md:p-10"
                         onClick={() => setSelectedImage(null)}
                     >
                         {/* Close button */}
