@@ -8,7 +8,6 @@ import globalCsrLogo from '../assets/images/global-csr.png';
 import qatarCsrLogo from '../assets/images/qatar-csr.png';
 import spainCsrLogo from '../assets/images/spain-csr.png';
 
-
 // ─── Glass card base ───
 const GLASS =
     'bg-[#003049]/30 backdrop-blur-sm border border-[#F8F9FA]/10 rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]';
@@ -106,7 +105,8 @@ function Tag({ label }) {
 }
 
 // ─── Project Card ───
-function ProjectCard({ project }) {
+// Notice the new 'imgHeightClass' prop added here
+function ProjectCard({ project, imgHeightClass }) {
     const { title, icon: Icon, image, description, tags, gradient, accent, demo, source, isDevelopment, imageContain } = project;
     const [showAllTags, setShowAllTags] = useState(false);
 
@@ -124,13 +124,14 @@ function ProjectCard({ project }) {
             onMouseLeave={() => setShowAllTags(false)}
         >
             {/* ── Screenshot / Hero area ── */}
-            <div className={`relative h-55 bg-[#001c2b]/50 overflow-hidden group-hover:bg-[#001c2b]/70 transition-colors duration-500`}>
+            {/* The hardcoded height is replaced with the dynamic 'imgHeightClass' variable */}
+            <div className={`relative ${imgHeightClass} bg-[#001c2b]/50 overflow-hidden group-hover:bg-[#001c2b]/70 transition-colors duration-500`}>
                 {/* Image or Placeholder */}
                 {image ? (
                     <img
                         src={image}
                         alt={title}
-                        className={`w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500 ${imageContain ? 'object-contain object-top p-4' : 'object-cover'}`}
+                        className={`w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500 ${imageContain ? 'object-contain object-top p-2' : 'object-cover'}`}
                     />
                 ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -264,14 +265,24 @@ export default function Projects() {
                     {/* Row 1: Flagship Projects */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {FLAGSHIP_PROJECTS.map((project) => (
-                            <ProjectCard key={project.title} project={project} />
+                            <ProjectCard
+                                key={project.title}
+                                project={project}
+                                /* Set your custom mobile and PC heights here */
+                                imgHeightClass="h-[250px] md:h-[350px]"
+                            />
                         ))}
                     </div>
 
                     {/* Row 2: Secondary Projects */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {SECONDARY_PROJECTS.map((project) => (
-                            <ProjectCard key={project.title} project={project} />
+                            <ProjectCard
+                                key={project.title}
+                                project={project}
+                                /* Set your custom mobile and PC heights here */
+                                imgHeightClass="h-[180px] md:h-[220px]"
+                            />
                         ))}
                     </div>
                 </div>
