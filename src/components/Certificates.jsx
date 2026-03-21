@@ -80,7 +80,7 @@ function CertificateCard({ cert, onClick }) {
                     <img
                         src={cert.image}
                         alt={cert.title}
-                        className="w-full h-full object-cover object-top  p-2 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                        className="w-full h-full object-contain  object-top  p-2 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                     />
                 ) : (
                     <span className="text-[#F8F9FA]/20 font-exo font-bold text-lg tracking-widest text-center px-4">

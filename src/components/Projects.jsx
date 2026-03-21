@@ -52,7 +52,7 @@ const SECONDARY_PROJECTS = [
         accent: '#F8F9FA',
         demo: 'https://globalcsr.org/',
         source: '#',
-        imageContain: true,
+        imageContain: false,
     },
     {
         title: 'QatarCSR',
@@ -64,7 +64,7 @@ const SECONDARY_PROJECTS = [
         accent: '#F8F9FA',
         demo: 'https://qatarcsr.org/',
         source: '#',
-        imageContain: true,
+        imageContain: false,
     },
     {
         title: 'SpainCSR',
@@ -76,7 +76,7 @@ const SECONDARY_PROJECTS = [
         accent: '#F8F9FA',
         demo: 'https://spaincsr.org/',
         source: '#',
-        imageContain: true,
+        imageContain: false,
     },
 ];
 

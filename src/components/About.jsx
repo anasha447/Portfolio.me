@@ -85,20 +85,17 @@ export default function About() {
                             {/* Background Glow */}
                             <div className="absolute -right-10 -top-10 w-32 h-32 bg-[#F77F00]/10 blur-3xl rounded-full pointer-events-none" />
 
-                            <div className="relative z-10 pl-4">
-                                <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
-                                    I fell in love with programming, and over the years, I have expanded my skills in developing high-performance web applications and scalable e-commerce architectures.
-                                </p>
-                                <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
-                                    I am fluent in core technologies like <span className="text-[#F8F9FA] font-medium">Java, JavaScript, and SQL</span>.
-                                </p>
-                                <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
-                                    My field of interest lies in building innovative web technologies and products, as well as integrating data-driven tools like <span className="text-[#F8F9FA] font-medium">Meta Ads and Google Analytics</span> to bridge the gap between clean code and real-world business growth.
-                                </p>
-                                <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
-                                    Whenever possible, I channel my passion into developing scalable and secure solutions using robust frameworks like <span className="text-[#F8F9FA] font-medium">Spring Boot</span> and modern JavaScript technologies like <span className="text-[#F8F9FA] font-medium">React.js</span>.
-                                </p>
-                            </div>
+                                    <div className="relative z-10 pl-4">
+                            <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
+                                I'm a Full-Stack Software Engineer passionate about creating dynamic, high-performance web experiences.
+                            </p>
+                            <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
+                                From robust backends to intuitive frontends, I thrive on solving complex problems with clean, efficient code. My core expertise spans <span className="text-[#F8F9FA] font-medium">Java, Spring Boot, SQL, and React.js </span>.
+                            </p>
+                            <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
+                                Beyond technical execution, I <span className="text-[#F8F9FA] font-medium">bridge my engineering skills with business analytics tools</span> like Meta Ads, Google Analytics,as well as managing SEO.This ensure the solutions I build actively drive real-world product growth.
+                            </p>
+                        </div>
                             {/* Stats Row (Inside card for unified look) */}
 
                         </motion.div>
