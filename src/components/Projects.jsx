@@ -24,7 +24,7 @@ const FLAGSHIP_PROJECTS = [
         gradient: 'from-[#F77F00]/20 via-[#003049]/40 to-[#D62828]/20',
         accent: '#F77F00',
         demo: 'https://matessa.in',
-        source: 'https://github.com/anasha447/Matessa',
+
     },
     {
         title: 'SyriaMart',
@@ -219,24 +219,13 @@ function ProjectCard({ project, imgHeightClass }) {
                                 href={demo}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
+                                className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
                                            bg-[#F77F00] text-white font-exo font-semibold text-xs uppercase tracking-wider
-                                           transition-all duration-300 hover:shadow-[0_0_20px_rgba(247,127,0,0.4)] hover:scale-[1.02]"
+                                           transition-all duration-300 hover:shadow-[0_0_20px_rgba(247,127,0,0.4)] hover:scale-[1.02] ${source !== '#' ? 'flex-1' : 'w-full'}`}
                             >
                                 Live Demo
                             </a>
-                            {source !== '#' && (
-                                <a
-                                    href={source}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl
-                                               border border-[#F8F9FA]/15 text-[#F8F9FA]/80 font-exo font-semibold text-xs uppercase tracking-wider
-                                               transition-all duration-300 hover:border-[#F77F00]/50 hover:text-[#F77F00] hover:scale-[1.02]"
-                                >
-                                    Source
-                                </a>
-                            )}
+
                         </>
                     )}
                 </div>

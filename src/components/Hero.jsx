@@ -8,7 +8,7 @@ import Antigravity from './Antigravity';
 
 // ─── Dynamic role phrases ───
 const ROLE_PHRASES = [
-    'Full-Stack Developer: \n • Java\n • Spring Boot\n • React.js\n • wordpress',
+    'Full-Stack Developer: \n • Java\n • Spring Boot\n • React.js\n • wordo',
     'Software Engineer.',
 ];
 
@@ -42,13 +42,13 @@ function resolveColor(c) {
 function CodeLine({ line, index }) {
     return (
         <motion.div
-            className="flex"
+            className="flex w-full"
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, delay: 0.8 + index * 0.06 }}
         >
-            <span className="w-8 text-right mr-5 text-[#F8F9FA]/20 select-none font-exo text-xs leading-6">{line.num}</span>
-            <span className="font-exo text-sm leading-6">
+            <span className="w-6 sm:w-8 flex-shrink-0 text-right mr-3 sm:mr-5 text-[#F8F9FA]/30 select-none font-exo text-[10px] sm:text-xs leading-[1.7] sm:leading-6 mt-[1px] sm:mt-0">{line.num}</span>
+            <span className="font-exo text-[11px] sm:text-sm leading-[1.7] sm:leading-6 whitespace-nowrap">
                 {line.content.map((token, i) => <span key={i} style={{ color: resolveColor(token.color) }}>{token.text}</span>)}
             </span>
         </motion.div>
@@ -85,17 +85,17 @@ function TiltCodeEditor() {
         >
             <figure
                 ref={ref}
-                className="relative w-full max-w-lg [perspective:800px] cursor-default"
+                className="relative w-full max-w-[95vw] md:max-w-lg [perspective:800px] cursor-default"
                 onMouseMove={handleMouse} onMouseEnter={handleEnter} onMouseLeave={handleLeave}
             >
                 <div className="absolute -inset-4 rounded-2xl bg-[#D62828]/8 blur-3xl -z-10" />
-                <motion.div className="relative [transform-style:preserve-3d] will-change-transform" style={{ rotateX, rotateY, scale }}>
-                    <div className="bg-[#001c2b]/80 backdrop-blur-sm border border-[#F8F9FA]/10 rounded-xl shadow-2xl overflow-hidden">
+                <motion.div className="relative w-full [transform-style:preserve-3d] will-change-transform" style={{ rotateX, rotateY, scale }}>
+                    <div className="bg-[#001c2b]/80 backdrop-blur-sm border border-[#F8F9FA]/10 rounded-xl shadow-2xl overflow-hidden w-full">
                         <div className="bg-[#003049]/50 border-b border-[#F8F9FA]/10 px-4 py-3 flex items-center">
                             <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-[#D62828]" /><span className="w-3 h-3 rounded-full bg-[#F77F00]" /><span className="w-3 h-3 rounded-full bg-[#F8F9FA]/50" /></div>
                             <div className="ml-auto flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#D62828] animate-pulse" /><span className="text-xs text-[#F8F9FA]/50 font-exo">portfolio.js</span></div>
                         </div>
-                        <div className="p-5 md:p-6 overflow-x-auto">{CODE_LINES.map((line, i) => <CodeLine key={i} line={line} index={i} />)}</div>
+                        <div className="p-4 sm:p-5 md:p-6 overflow-x-auto w-full">{CODE_LINES.map((line, i) => <CodeLine key={i} line={line} index={i} />)}</div>
                     </div>
                 </motion.div>
             </figure>
