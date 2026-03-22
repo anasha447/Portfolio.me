@@ -85,17 +85,17 @@ export default function About() {
                             {/* Background Glow */}
                             <div className="absolute -right-10 -top-10 w-32 h-32 bg-[#F77F00]/10 blur-3xl rounded-full pointer-events-none" />
 
-                                    <div className="relative z-10 pl-4">
-                            <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
-                                I'm a Full-Stack Software Engineer passionate about creating dynamic, high-performance web experiences.
-                            </p>
-                            <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
-                                From robust backends to intuitive frontends, I thrive on solving complex problems with clean, efficient code. My core expertise spans <span className="text-[#F8F9FA] font-medium">Java, Spring Boot, SQL, and React.js </span>.
-                            </p>
-                            <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
-                                Beyond technical execution, I <span className="text-[#F8F9FA] font-medium">bridge my engineering skills with business analytics tools</span> like Meta Ads, Google Analytics,as well as managing SEO.This ensure the solutions I build actively drive real-world product growth.
-                            </p>
-                        </div>
+                            <div className="relative z-10 pl-4">
+                                <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
+                                    I'm a Full-Stack Software Engineer passionate about creating dynamic, high-performance web experiences.
+                                </p>
+                                <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
+                                    I build complete web applications from the database to the user interface.By using my core technical stack which is <span className="text-[#F8F9FA] font-medium">Java, Spring Boot, SQL, and Typescript</span>, allowing me to write clean, reliable code that solves real problems.
+                                </p>
+                                <p className="font-roboto text-[#F8F9FA]/80 text-base md:text-lg leading-relaxed mb-6">
+                                    Beyond technical execution, I <span className="text-[#F8F9FA] font-medium">bridge my coding skills with business analytics tools</span> like Meta Ads, Google Analytics, and SEO. This ensures the solutions I build actively drive real-world product growth.
+                                </p>
+                            </div>
                             {/* Stats Row (Inside card for unified look) */}
 
                         </motion.div>

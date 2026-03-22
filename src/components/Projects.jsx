@@ -269,7 +269,7 @@ export default function Projects() {
                                 key={project.title}
                                 project={project}
                                 /* Set your custom mobile and PC heights here */
-                                imgHeightClass="h-[250px] md:h-[350px]"
+                                imgHeightClass="h-[250px] md:h-[350px] "
                             />
                         ))}
                     </div>
@@ -281,7 +281,7 @@ export default function Projects() {
                                 key={project.title}
                                 project={project}
                                 /* Set your custom mobile and PC heights here */
-                                imgHeightClass="h-[180px] md:h-[220px]"
+                                imgHeightClass="h-[180px] md:h-[220px] "
                             />
                         ))}
                     </div>
