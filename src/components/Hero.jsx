@@ -8,6 +8,7 @@ import Antigravity from './Antigravity';
 
 // ─── Dynamic role phrases ───
 const ROLE_PHRASES = [
+
     'Full-Stack Developer: \n • Java\n • Spring Boot\n • React.js\n • wordpress',
     'Software Engineer.',
 ];
@@ -23,12 +24,14 @@ const CODE_LINES = [
     { num: '01', content: [{ text: 'const ', color: '#D62828' }, { text: 'developer', color: '#F8F9FA' }, { text: ' = {', color: '#F8F9FA' }] },
     { num: '02', content: [{ text: '  name: ', color: '#F8F9FA/70' }, { text: "'Anas Habib'", color: '#F77F00' }, { text: ',', color: '#F8F9FA/50' }] },
     { num: '03', content: [{ text: '  role: ', color: '#F8F9FA/70' }, { text: "'Full-Stack Software Engineer'", color: '#F77F00' }, { text: ',', color: '#F8F9FA/50' }] },
-    { num: '04', content: [{ text: '  coreStack: [', color: '#F8F9FA/70' }, { text: "'Java Spring Boot'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'React.js'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'SQL'", color: '#F77F00' }, { text: '],', color: '#F8F9FA/70' }] },
-    { num: '05', content: [{ text: '  businessEdge: [', color: '#F8F9FA/70' }, { text: "'Meta Ads'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'Google Analytics'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'Advanced SEO'", color: '#F77F00' }, { text: '],', color: '#F8F9FA/70' }] },
-    { num: '06', content: [{ text: '  passionate: ', color: '#F8F9FA/70' }, { text: 'true', color: '#F77F00' }, { text: ',', color: '#F8F9FA/50' }] },
+    { num: '04', content: [{ text: '  education: ', color: '#F8F9FA/70' }, { text: "'Bachelor of Computer Engineering'", color: '#F77F00' }, { text: ',', color: '#F8F9FA/50' }] },
+
+    { num: '05', content: [{ text: '  coreStack: [', color: '#F8F9FA/70' }, { text: "'Java Spring Boot'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'React.js'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'SQL'", color: '#F77F00' }, { text: '],', color: '#F8F9FA/70' }] },
+    { num: '06', content: [{ text: '  businessEdge: [', color: '#F8F9FA/70' }, { text: "'Meta Ads'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'Google Analytics'", color: '#F77F00' }, { text: ', ', color: '#F8F9FA/50' }, { text: "'Advanced SEO'", color: '#F77F00' }, { text: '],', color: '#F8F9FA/70' }] },
+    { num: '07', content: [{ text: '  passionate: ', color: '#F8F9FA/70' }, { text: 'true', color: '#F77F00' }, { text: ',', color: '#F8F9FA/50' }] },
     { num: '08', content: [{ text: '};', color: '#F8F9FA' }] },
-    { num: '', content: [] },
-    { num: '09', content: [{ text: 'developer', color: '#F8F9FA' }, { text: '.', color: '#F8F9FA/50' }, { text: 'showcase', color: '#D62828' }, { text: '();', color: '#F8F9FA' }] },
+    { num: '09', content: [] },
+    { num: '10', content: [{ text: 'developer', color: '#F8F9FA' }, { text: '.', color: '#F8F9FA/50' }, { text: 'showcase', color: '#D62828' }, { text: '();', color: '#F8F9FA' }] },
 ];
 
 function resolveColor(c) {
