@@ -8,7 +8,7 @@ import Antigravity from './Antigravity';
 
 // ─── Dynamic role phrases ───
 const ROLE_PHRASES = [
-    'Full-Stack Developer: \n • Java\n • Spring Boot\n • React.js\n • wordo',
+    'Full-Stack Developer: \n • Java\n • Spring Boot\n • React.js\n • wordpress',
     'Software Engineer.',
 ];
 
