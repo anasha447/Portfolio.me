@@ -19,10 +19,11 @@ import {
     SiTailwindcss,
     SiMysql,
     SiPostgresql,
-    
     SiPostman,
     SiAdobephotoshop,
     SiAdobeillustrator,
+    SiNextdotjs,
+    SiKubernetes,
 } from 'react-icons/si';
 
 // ─── SkillCard ───
@@ -66,23 +67,24 @@ function SkillCard({ icon: Icon, name }) {
 const coreStack = [
     { icon: FaJava, name: 'Java' },
     { icon: SiJavascript, name: 'JavaScript' },
-    { icon: SiReact, name: 'React' },
     { icon: SiTypescript, name: 'TypeScript' },
     { icon: SiHtml5, name: 'HTML5' },
     { icon: SiCss3, name: 'CSS3' },
-    { icon: SiTailwindcss, name: 'Tailwind' },
-    { icon: SiSpringboot, name: 'Spring Boot' },
 ];
 
 const ecosystem = [
+    { icon: SiReact, name: 'React' },
+    { icon: SiTailwindcss, name: 'Tailwind' },
+    { icon: SiSpringboot, name: 'Spring Boot' },
+    { icon: SiNextdotjs, name: 'Next.js' },
+    { icon: SiKubernetes, name: 'Kubernetes' },
     { icon: SiDocker, name: 'Docker' },
     { icon: SiGit, name: 'Git' },
     { icon: SiPostman, name: 'Postman' },
     { icon: SiMysql, name: 'MySQL' },
-    { icon: SiPostgresql, name: 'PostgreSQL' }, // Added
-    { icon: SiAdobephotoshop, name: 'Photoshop' }, // Added
-    { icon: SiAdobeillustrator, name: 'Illustrator' }, // Added
-    // Removed Figma, Firebase
+    { icon: SiPostgresql, name: 'PostgreSQL' },
+    { icon: SiAdobephotoshop, name: 'Photoshop' },
+    { icon: SiAdobeillustrator, name: 'Illustrator' },
 ];
 
 // ─── Framer variants ───
@@ -157,7 +159,7 @@ export default function Skills() {
                     {/* Tools & Ecosystem */}
                     <div className="space-y-8">
                         <h3 className="text-center font-exo text-xs text-[#F8F9FA]/40 uppercase tracking-[0.4em]">
-                            Tools
+                            Tools &amp; Frameworks
                         </h3>
                         <LogoLoop
                             items={ecosystem}

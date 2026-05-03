@@ -109,6 +109,7 @@ function Tag({ label }) {
 function ProjectCard({ project, imgHeightClass }) {
     const { title, icon: Icon, image, description, tags, gradient, accent, demo, source, isDevelopment, imageContain } = project;
     const [showAllTags, setShowAllTags] = useState(false);
+    const [expanded, setExpanded] = useState(false);
 
     const MAX_VISIBLE_TAGS = 5;
     const visibleTags = tags.slice(0, MAX_VISIBLE_TAGS);
@@ -159,9 +160,18 @@ function ProjectCard({ project, imgHeightClass }) {
                     </h3>
                 )}
                 {/* Description */}
-                <p className="font-exo font-light text-sm text-[#F8F9FA]/70 leading-relaxed line-clamp-3">
-                    {description}
-                </p>
+                <div>
+                    <p className={`font-exo font-light text-sm text-[#F8F9FA]/70 leading-relaxed ${expanded ? '' : 'line-clamp-3'}`}>
+                        {description}
+                    </p>
+                    {/* Read more / less – only shown on small screens where clamping is likely */}
+                    <button
+                        className="mt-1 text-[11px] font-exo font-semibold text-[#F77F00] hover:text-[#D62828] transition-colors md:hidden"
+                        onClick={() => setExpanded((v) => !v)}
+                    >
+                        {expanded ? 'Read less ↑' : 'Read more ↓'}
+                    </button>
+                </div>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 items-center relative">
